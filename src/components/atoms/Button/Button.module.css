@@ -1,5 +1,4 @@
 .button {
-  cursor: pointer;
   padding-inline: var(--spacing-300);
   padding-block: var(--spacing-200);
   font: var(--text-preset-5-medium-font);
