@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo } from "react";
+import { useCallback, useEffect, useMemo, useRef } from "react";
 import { useWeatherStore, useUnitsStore } from "../stores";
 import { useGeolocation, useWeather } from "./index";
 import {
@@ -57,9 +57,20 @@ export const useWeatherState = (): UseWeatherStateReturn => {
   const latitude = selectedLocation?.latitude ?? geoLatitude;
   const longitude = selectedLocation?.longitude ?? geoLongitude;
 
+  const prevCoords = useRef<{ lat: number | null; lon: number | null }>({
+    lat: null,
+    lon: null,
+  });
+
   useEffect(() => {
-    setSelectedDayIndex(0);
-  }, [latitude, longitude]);
+    if (
+      latitude !== prevCoords.current.lat ||
+      longitude !== prevCoords.current.lon
+    ) {
+      setSelectedDayIndex(0);
+      prevCoords.current = { lat: latitude, lon: longitude };
+    }
+  }, [latitude, longitude, setSelectedDayIndex]);
 
   const {
     data: weatherData,
@@ -77,7 +88,7 @@ export const useWeatherState = (): UseWeatherStateReturn => {
 
   const isLoading =
     (!selectedLocation && geoLoading) ||
-    (latitude && longitude && weatherLoading);
+    (latitude != null && longitude != null && weatherLoading);
 
   const error = getWeatherError(geoError, weatherError, selectedLocation);
 
@@ -140,7 +151,7 @@ export const useWeatherState = (): UseWeatherStateReturn => {
   }, [refetchWeather]);
 
   return {
-    isLoading: Boolean(isLoading),
+    isLoading,
     error: error satisfies string | null,
     setSelectedDayIndex,
     retry,
