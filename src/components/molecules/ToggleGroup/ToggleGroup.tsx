@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import styles from "./ToggleGroup.module.css";
 
 interface ToggleOption<T extends string> {
@@ -26,7 +27,10 @@ export const ToggleGroup = <T extends string>({
           <button
             type="button"
             key={option.value}
-            className={value === option.value ? styles.active : ""}
+            className={clsx(
+              styles.toggleButton,
+              value === option.value && styles.active,
+            )}
             onClick={() => {
               onChange(option.value);
             }}

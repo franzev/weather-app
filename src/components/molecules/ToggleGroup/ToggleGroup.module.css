@@ -14,7 +14,7 @@
   gap: var(--spacing-100);
 }
 
-.toggleOptions button {
+.toggleButton {
   flex: 1;
   padding: var(--spacing-150) var(--spacing-200);
   font: var(--text-preset-7-font);
@@ -27,15 +27,15 @@
   transition: all 0.2s;
 }
 
-.toggleOptions button:hover {
+.toggleButton:hover {
   background-color: var(--color-neutral-700);
 }
 
-.toggleOptions button.active {
+.toggleButton.active {
   background-color: var(--color-blue-500);
   border-color: var(--color-blue-500);
 }
 
-.toggleOptions button.active:hover {
+.toggleButton.active:hover {
   background-color: var(--color-blue-700);
 }
