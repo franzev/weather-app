@@ -1,3 +1,4 @@
+import { forwardRef } from "react";
 import clsx from "clsx";
 import { Icon } from "../../atoms";
 import styles from "./UnitsDropdownButton.module.css";
@@ -7,17 +8,19 @@ interface UnitsDropdownButtonProps {
   onClick: () => void;
 }
 
-export const UnitsDropdownButton = ({
-  isOpen,
-  onClick,
-}: UnitsDropdownButtonProps) => {
+export const UnitsDropdownButton = forwardRef<
+  HTMLButtonElement,
+  UnitsDropdownButtonProps
+>(({ isOpen, onClick }, ref) => {
   return (
     <button
+      ref={ref}
       type="button"
       className={styles.unitsButton}
       onClick={onClick}
       aria-label="Units settings"
       aria-expanded={isOpen}
+      aria-controls="units-menu"
     >
       <Icon src="/images/icon-units.svg" alt="" width={14} height={14} />
       <span>Units</span>
@@ -28,4 +31,6 @@ export const UnitsDropdownButton = ({
       />
     </button>
   );
-};
+});
+
+UnitsDropdownButton.displayName = "UnitsDropdownButton";

@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { useUnitsStore } from "../../../stores";
 import { useClickOutside } from "../../../hooks/useClickOutside";
 import {
@@ -36,6 +36,8 @@ const Divider = () => {
 export const UnitsDropdown = () => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
+  const menuRef = useRef<HTMLDivElement>(null);
   const {
     units,
     setUnitSystem,
@@ -44,6 +46,11 @@ export const UnitsDropdown = () => {
     setPrecipitationUnit,
   } = useUnitsStore();
 
+  const closeDropdown = useCallback(() => {
+    setIsOpen(false);
+    buttonRef.current?.focus();
+  }, []);
+
   useClickOutside(
     dropdownRef,
     () => {
@@ -51,6 +58,49 @@ export const UnitsDropdown = () => {
     },
     isOpen,
   );
+
+  useEffect(() => {
+    if (isOpen && menuRef.current) {
+      const firstFocusable =
+        menuRef.current.querySelector<HTMLElement>("button");
+      firstFocusable?.focus();
+    }
+  }, [isOpen]);
+
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        closeDropdown();
+        return;
+      }
+
+      if (e.key === "ArrowDown" || e.key === "ArrowUp") {
+        e.preventDefault();
+        const menu = menuRef.current;
+        if (!menu) return;
+
+        const items = Array.from(menu.querySelectorAll<HTMLElement>("button"));
+        const currentIndex = items.indexOf(
+          document.activeElement as HTMLElement,
+        );
+
+        let nextIndex: number;
+        if (e.key === "ArrowDown") {
+          nextIndex = currentIndex < items.length - 1 ? currentIndex + 1 : 0;
+        } else {
+          nextIndex = currentIndex > 0 ? currentIndex - 1 : items.length - 1;
+        }
+        items[nextIndex]?.focus();
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isOpen, closeDropdown]);
 
   const switchLabel =
     units.system === "metric" ? "Switch to Imperial" : "Switch to Metric";
@@ -72,14 +122,20 @@ export const UnitsDropdown = () => {
   return (
     <div className={styles.unitsContainer} ref={dropdownRef}>
       <UnitsDropdownButton
+        ref={buttonRef}
         isOpen={isOpen}
         onClick={() => {
           setIsOpen(!isOpen);
         }}
       />
       {isOpen && (
-        <div className={styles.unitsDropdown}>
-          <SystemSwitchButton onClick={handleSystemSwitch}>
+        <div
+          ref={menuRef}
+          id="units-menu"
+          role="menu"
+          className={styles.unitsDropdown}
+        >
+          <SystemSwitchButton role="menuitem" onClick={handleSystemSwitch}>
             {switchLabel}
           </SystemSwitchButton>
 
