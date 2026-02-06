@@ -133,6 +133,7 @@ export const UnitsDropdown = () => {
         id="units-menu"
         role="menu"
         className={styles.unitsDropdown}
+        aria-hidden={!isOpen}
         style={{ display: isOpen ? "block" : "none" }}
       >
         <SystemSwitchButton role="menuitem" onClick={handleSystemSwitch}>
