@@ -13,7 +13,13 @@ const WeatherApp = () => {
   return (
     <main className={styles.app}>
       <header className={styles.header}>
-        <img src="/images/logo.svg" alt="Weather Now" className={styles.logo} />
+        <h1>
+          <img
+            src="/images/logo.svg"
+            alt="Weather Now logo"
+            className={styles.logo}
+          />
+        </h1>
         <UnitsDropdown />
       </header>
 
