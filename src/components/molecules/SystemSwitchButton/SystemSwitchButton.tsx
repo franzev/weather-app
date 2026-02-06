@@ -6,7 +6,7 @@ export const SystemSwitchButton = ({
   ...props
 }: ButtonHTMLAttributes<HTMLButtonElement>) => {
   return (
-    <button className={styles.switchButton} {...props}>
+    <button type="button" className={styles.switchButton} {...props}>
       {children}
     </button>
   );
