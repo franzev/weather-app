@@ -15,25 +15,23 @@ const getGeolocationPromise = (): Promise<GeolocationCoordinates> => {
       return;
     }
 
+    localStorage.setItem(GEOLOCATION_REQUESTED_KEY, "true");
+
     navigator.geolocation.getCurrentPosition(
       (position) => {
         resolve({
           latitude: position.coords.latitude,
           longitude: position.coords.longitude,
         });
-        // Mark geolocation as requested
-        localStorage.setItem(GEOLOCATION_REQUESTED_KEY, "true");
       },
       (error) => {
-        // Mark geolocation as requested even if denied
-        localStorage.setItem(GEOLOCATION_REQUESTED_KEY, "true");
         reject(new Error(error.message));
       },
       {
         enableHighAccuracy: true,
         timeout: 10000,
         maximumAge: 0, // Don't use cached position
-      }
+      },
     );
   });
 };
@@ -41,16 +39,17 @@ const getGeolocationPromise = (): Promise<GeolocationCoordinates> => {
 export const useGeolocation = () => {
   const [isPending, startTransition] = useTransition();
   const [coordinates, setCoordinates] = useState<GeolocationCoordinates | null>(
-    null
+    null,
   );
   const [error, setError] = useState<string | null>(null);
 
-  const hasRequested = useMemo(
-    () =>
-      typeof window !== "undefined" &&
-      localStorage.getItem(GEOLOCATION_REQUESTED_KEY) !== null,
-    []
-  );
+  const hasRequested = useMemo(() => {
+    if (typeof window === "undefined") {
+      return false;
+    }
+
+    return localStorage.getItem(GEOLOCATION_REQUESTED_KEY) !== null;
+  }, []);
 
   useEffect(() => {
     if (hasRequested) {
@@ -65,7 +64,7 @@ export const useGeolocation = () => {
         })
         .catch((err: unknown) => {
           setError(
-            err instanceof Error ? err.message : "Failed to get location"
+            err instanceof Error ? err.message : "Failed to get location",
           );
           setCoordinates(null);
         });
