@@ -18,7 +18,7 @@
   .unitsButton {
     padding-inline: var(--spacing-200);
     padding-block: var(--spacing-125);
-    gap: var(--spacing-200);
+    gap: var(--spacing-125);
     font-size: 1rem;
   }
 }
