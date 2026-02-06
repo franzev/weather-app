@@ -13,6 +13,7 @@ export const UnitsDropdownButton = ({
 }: UnitsDropdownButtonProps) => {
   return (
     <button
+      type="button"
       className={styles.unitsButton}
       onClick={onClick}
       aria-label="Units settings"

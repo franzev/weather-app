@@ -17,6 +17,7 @@ export const DropdownTrigger = ({
 }: DropdownTriggerProps) => {
   return (
     <button
+      type="button"
       className={styles.trigger}
       onClick={onClick}
       aria-expanded={isOpen}

@@ -15,6 +15,7 @@ export const DropdownMenuItem = ({
   return (
     <li>
       <button
+        type="button"
         className={clsx(styles.item, isActive && styles.active)}
         onClick={onClick}
       >

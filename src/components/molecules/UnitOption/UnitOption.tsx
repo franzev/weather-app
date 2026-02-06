@@ -11,6 +11,7 @@ interface UnitOptionProps {
 export const UnitOption = ({ label, isSelected, onClick }: UnitOptionProps) => {
   return (
     <button
+      type="button"
       className={clsx(styles.option, isSelected && styles.selected)}
       onClick={onClick}
     >

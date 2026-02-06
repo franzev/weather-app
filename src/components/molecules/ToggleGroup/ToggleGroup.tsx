@@ -24,6 +24,7 @@ export const ToggleGroup = <T extends string>({
       <div className={styles.toggleOptions}>
         {options.map((option) => (
           <button
+            type="button"
             key={option.value}
             className={value === option.value ? styles.active : ""}
             onClick={() => {
