@@ -4,7 +4,7 @@
   gap: var(--spacing-50);
   position: absolute;
   top: calc(100% + var(--spacing-100));
-  min-width: 140px;
+  min-width: 8.75rem;
   padding: var(--spacing-100);
   list-style: none;
   background-color: var(--color-neutral-800);

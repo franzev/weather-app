@@ -31,7 +31,7 @@
   z-index: 10;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 48rem) {
   .searchInputWrapper {
     flex-direction: row;
   }
@@ -48,9 +48,9 @@
   }
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 90rem) {
   .searchInputWrapper {
-    width: 656px;
+    width: 41rem;
     align-self: center;
   }
 }

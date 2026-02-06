@@ -4,7 +4,7 @@
   gap: var(--spacing-150);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 48rem) {
   .weatherStats {
     grid-template-columns: repeat(4, 1fr);
   }

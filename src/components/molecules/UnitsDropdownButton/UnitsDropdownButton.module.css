@@ -14,7 +14,7 @@
   transition: all 0.2s;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 48rem) {
   .unitsButton {
     padding-inline: var(--spacing-200);
     padding-block: var(--spacing-125);

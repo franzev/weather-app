@@ -18,8 +18,8 @@
   color: var(--color-neutral-0);
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 90rem) {
   .hourlyForecast {
-    width: 384px;
+    width: 24rem;
   }
 }

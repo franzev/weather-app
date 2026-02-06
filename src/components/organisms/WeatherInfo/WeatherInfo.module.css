@@ -33,13 +33,13 @@
   gap: var(--spacing-150);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 48rem) {
   .heroCard {
     flex-direction: row;
     justify-content: space-between;
     background-image: url("/images/bg-today-large.svg");
     background-size: cover;
-    height: 286px;
+    height: 17.875rem;
   }
 
   .locationInfo {
@@ -64,8 +64,8 @@
 }
 
 .icon {
-  width: 120px;
-  height: 120px;
+  width: 7.5rem;
+  height: 7.5rem;
 }
 
 .temp {

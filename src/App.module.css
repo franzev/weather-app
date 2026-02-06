@@ -6,16 +6,16 @@
   padding-block: var(--spacing-200) var(--spacing-600);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 48rem) {
   .app {
     padding-inline: var(--spacing-300);
     padding-block: var(--spacing-300) var(--spacing-1000);
   }
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 90rem) {
   .app {
-    max-width: 1440px;
+    max-width: 90rem;
     margin-inline: auto;
     gap: var(--spacing-800);
     padding-inline: var(--spacing-1400);
@@ -40,13 +40,13 @@
   align-self: center;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 48rem) {
   .mainTitle {
-    width: 482px;
+    width: 30.125rem;
   }
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 90rem) {
   .mainTitle {
     width: auto;
   }

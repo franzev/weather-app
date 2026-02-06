@@ -12,11 +12,17 @@
 }
 
 .dot {
-  width: 10px;
-  height: 10px;
+  width: 0.625rem;
+  height: 0.625rem;
   border-radius: 50%;
   background-color: var(--color-neutral-200);
   animation: bounce 1.4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dot {
+    animation: none;
+  }
 }
 
 .dot:nth-child(1) {
@@ -44,7 +50,7 @@
     opacity: 0.6;
   }
   40% {
-    transform: translateY(-8px);
+    transform: translateY(-0.5rem);
     opacity: 1;
   }
 }

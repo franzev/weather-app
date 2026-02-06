@@ -10,13 +10,13 @@
   gap: var(--spacing-500);
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 90rem) {
   .weatherContainer {
     flex-direction: row;
   }
 
   .mainContent {
-    width: 800px;
+    width: 50rem;
     gap: var(--spacing-600);
   }
 }
