@@ -1,5 +1,4 @@
 export { useClickOutside } from "./useClickOutside";
-export { useGeolocation } from "./useGeolocation";
 export { useLocationSearch } from "./useLocationSearch";
 export { useSearchResults } from "./useSearchResults";
 export { useUnits } from "./useUnits";

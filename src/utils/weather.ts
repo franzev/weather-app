@@ -118,13 +118,8 @@ export const getHourlyStartIndex = (
 };
 
 export const getWeatherError = (
-  geoError: string | null,
   weatherError: Error | null,
-  selectedLocation: { name: string } | null
 ): string | null => {
-  if (!selectedLocation && geoError) {
-    return "Location access denied or unavailable. You can search for a location manually.";
-  }
   if (weatherError) {
     return weatherError instanceof Error
       ? weatherError.message

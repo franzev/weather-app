@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef } from "react";
 import { useWeatherStore, useUnitsStore } from "../stores";
-import { useGeolocation, useWeather } from "./index";
+import { useWeather } from "./index";
 import {
   getHourlyStartIndex,
   getWeatherError,
@@ -47,15 +47,8 @@ export const useWeatherState = (): UseWeatherStateReturn => {
   const { selectedLocation, selectedDayIndex, setSelectedDayIndex } =
     useWeatherStore();
 
-  const {
-    latitude: geoLatitude,
-    longitude: geoLongitude,
-    error: geoError,
-    isLoading: geoLoading,
-  } = useGeolocation();
-
-  const latitude = selectedLocation?.latitude ?? geoLatitude;
-  const longitude = selectedLocation?.longitude ?? geoLongitude;
+  const latitude = selectedLocation?.latitude ?? null;
+  const longitude = selectedLocation?.longitude ?? null;
 
   const prevCoords = useRef<{ lat: number | null; lon: number | null }>({
     lat: null,
@@ -87,10 +80,9 @@ export const useWeatherState = (): UseWeatherStateReturn => {
   const { units } = useUnitsStore();
 
   const isLoading =
-    (!selectedLocation && geoLoading) ||
-    (latitude != null && longitude != null && weatherLoading);
+    latitude != null && longitude != null && weatherLoading;
 
-  const error = getWeatherError(geoError, weatherError, selectedLocation);
+  const error = getWeatherError(weatherError);
 
   const currentWeatherInfo = useMemo(() => {
     if (!weatherData || !selectedLocation) return undefined;
@@ -152,7 +144,7 @@ export const useWeatherState = (): UseWeatherStateReturn => {
 
   return {
     isLoading,
-    error: error satisfies string | null,
+    error,
     setSelectedDayIndex,
     retry,
     currentWeatherInfo,
