@@ -1,0 +1,25 @@
+.trigger {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-150);
+  padding-inline: var(--spacing-200);
+  padding-block: var(--spacing-100);
+  font: var(--text-preset-7-font);
+  color: var(--color-neutral-0);
+  background-color: var(--color-neutral-600);
+  border: none;
+  border-radius: var(--radius-8);
+  cursor: pointer;
+}
+
+.trigger:focus {
+  outline: none;
+}
+
+.chevron {
+  transition: transform 0.2s;
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+}

@@ -1,0 +1,22 @@
+.weatherContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-400);
+}
+
+.mainContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-500);
+}
+
+@media (min-width: 1440px) {
+  .weatherContainer {
+    flex-direction: row;
+  }
+
+  .mainContent {
+    width: 800px;
+    gap: var(--spacing-600);
+  }
+}

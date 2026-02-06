@@ -1,0 +1,21 @@
+.button {
+  border: none;
+  cursor: pointer;
+  padding-inline: var(--spacing-300);
+  padding-block: var(--spacing-200);
+  font: var(--text-preset-5-medium-font);
+  color: var(--color-neutral-0);
+  background-color: var(--color-blue-500);
+  border: none;
+  border-radius: var(--radius-12);
+  cursor: pointer;
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.button:hover {
+  background-color: var(--color-blue-700);
+}

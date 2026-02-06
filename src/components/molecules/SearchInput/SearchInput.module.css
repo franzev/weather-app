@@ -1,0 +1,28 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-200);
+  padding-inline: var(--spacing-300);
+  padding-block: var(--spacing-200);
+  background-color: var(--color-neutral-800);
+  border-radius: var(--radius-12);
+  flex: 1;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+}
+
+.input {
+  width: 100%;
+  font: var(--text-preset-5-medium-font);
+  background-color: transparent;
+  color: var(--color-neutral-200);
+  border: none;
+  outline: none;
+}
+
+.input::placeholder {
+  color: var(--color-neutral-200);
+}

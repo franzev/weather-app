@@ -1,0 +1,28 @@
+.option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding-inline: var(--spacing-100);
+  padding-block: var(--spacing-125);
+  font: var(--text-preset-7-font);
+  color: var(--color-neutral-0);
+  background: none;
+  border: none;
+  border-radius: var(--radius-8);
+  cursor: pointer;
+  text-align: left;
+  transition: background-color 0.2s;
+}
+
+.option:not(:last-child) {
+  margin-block-end: var(--spacing-50);
+}
+
+.option:hover {
+  background-color: var(--color-neutral-700);
+}
+
+.option.selected {
+  background-color: var(--color-neutral-700);
+}

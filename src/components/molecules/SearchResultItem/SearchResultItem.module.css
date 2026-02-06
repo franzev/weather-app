@@ -1,0 +1,28 @@
+.item {
+  padding-inline: var(--spacing-100);
+  padding-block: var(--spacing-125);
+  border-radius: var(--radius-8);
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.item:hover {
+  background-color: var(--color-neutral-700);
+  border: 1px solid var(--color-neutral-600);
+}
+
+.item:focus {
+  background-color: var(--color-neutral-700);
+  outline: none;
+}
+
+.name {
+  font: var(--text-preset-7-font);
+  color: var(--color-neutral-0);
+  margin-block-end: var(--spacing-50);
+}
+
+.details {
+  font: var(--text-preset-8-medium-font);
+  color: var(--color-neutral-300);
+}

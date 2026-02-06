@@ -1,0 +1,25 @@
+.hourlyForecast {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-200);
+  padding: var(--spacing-300);
+  background-color: var(--color-neutral-800);
+  border-radius: var(--radius-20);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font: var(--text-preset-5-font);
+  color: var(--color-neutral-0);
+}
+
+@media (min-width: 1440px) {
+  .hourlyForecast {
+    width: 384px;
+  }
+}

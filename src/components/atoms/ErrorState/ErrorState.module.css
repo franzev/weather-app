@@ -1,0 +1,36 @@
+.errorState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-300);
+  padding-block-start: var(--spacing-500);
+}
+
+.errorState img {
+  width: 42px;
+  height: 50px;
+}
+
+.errorState h1 {
+  font: var(--text-preset-2-font);
+  color: var(--color-neutral-0);
+}
+
+.errorState p {
+  font: var(--text-preset-5-medium-font);
+  color: var(--color-neutral-200);
+  text-align: center;
+}
+
+.retryButton {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-125);
+  background-color: var(--color-neutral-800);
+  font: var(--text-preset-7-font);
+}
+
+.retryButton img {
+  width: 1rem;
+  height: 1rem;
+}

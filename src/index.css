@@ -1,0 +1,92 @@
+:root {
+  --font-family-base: "DM Sans", sans-serif;
+  --font-family-heading: "Bricolage Grotesque", sans-serif;
+
+  font-family: var(--font-family-base);
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0;
+
+  color-scheme: dark;
+  color: var(--color-neutral-0);
+  background-color: var(--color-neutral-900);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --color-neutral-900: hsl(243, 96%, 9%);
+  --color-neutral-800: hsl(243, 27%, 20%);
+  --color-neutral-700: hsl(243, 23%, 24%);
+  --color-neutral-600: hsl(243, 23%, 30%);
+  --color-neutral-300: hsl(240, 6%, 70%);
+  --color-neutral-200: hsl(250, 6%, 84%);
+  --color-neutral-0: hsl(0, 0%, 100%);
+
+  --color-orange-500: hsl(28, 100%, 52%);
+
+  --color-blue-500: hsl(233, 67%, 56%);
+  --color-blue-700: hsl(248, 70%, 36%);
+
+  --text-preset-1-font: 600 6rem/1 var(--font-family-base);
+  --text-preset-1-font-style: italic;
+  --text-preset-1-letter-spacing: -0.125rem;
+  --text-preset-2-font: 700 3.25rem/1.2 var(--font-family-heading);
+  --text-preset-3-font: 400 2rem/1 var(--font-family-base);
+  --text-preset-4-font: 700 1.75rem/1.2 var(--font-family-base);
+  --text-preset-5-font: 600 1.25rem/1.2 var(--font-family-base);
+  --text-preset-5-medium-font: 500 1.25rem/1.2 var(--font-family-base);
+  --text-preset-6-medium-font: 500 1.125rem/1.2 var(--font-family-base);
+  --text-preset-7-line-height: 1.2;
+  --text-preset-7-font: 500 1rem / var(--text-preset-7-line-height)
+    var(--font-family-base);
+  --text-preset-8-medium-font: 500 0.875rem/1.2 var(--font-family-base);
+
+  --spacing-0: 0; /* 0px */
+  --spacing-25: 0.125rem; /* 2px */
+  --spacing-50: 0.25rem; /* 4px */
+  --spacing-75: 0.375rem; /* 6px */
+  --spacing-100: 0.5rem; /* 8px */
+  --spacing-125: 0.625rem; /* 10px */
+  --spacing-150: 0.75rem; /* 12px */
+  --spacing-200: 1rem; /* 16px */
+  --spacing-250: 1.25rem; /* 20px */
+  --spacing-300: 1.5rem; /* 24px */
+  --spacing-400: 2rem; /* 32px */
+  --spacing-500: 2.5rem; /* 40px */
+  --spacing-600: 3rem; /* 48px */
+  --spacing-800: 4rem; /* 64px */
+  --spacing-1000: 5rem; /* 80px */
+  --spacing-1200: 6rem; /* 96px */
+  --spacing-1400: 7rem; /* 112px */
+  --spacing-1600: 8rem; /* 128px */
+  --spacing-1800: 8.75rem; /* 140px */
+
+  --radius-0: 0; /* 0px */
+  --radius-4: 0.25rem; /* 4px */
+  --radius-6: 0.375rem; /* 6px */
+  --radius-8: 0.5rem; /* 8px */
+  --radius-10: 0.625rem; /* 10px */
+  --radius-12: 0.75rem; /* 12px */
+  --radius-16: 1rem; /* 16px */
+  --radius-20: 1.25rem; /* 20px */
+  --radius-24: 1.5rem; /* 24px */
+  --radius-full: 9999rem; /* fully rounded */
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+}

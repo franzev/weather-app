@@ -1,0 +1,33 @@
+.card {
+  padding-inline: var(--spacing-125);
+  padding-block: var(--spacing-200);
+  flex: 1;
+}
+
+.dayName {
+  font: var(--text-preset-6-font);
+  color: var(--color-neutral-0);
+  text-align: center;
+}
+
+.weatherIcon {
+  width: 60px;
+  height: 60px;
+  align-self: center;
+}
+
+.temps {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--spacing-100);
+}
+
+.tempMax {
+  font: var(--text-preset-7-font);
+  color: var(--color-neutral-0);
+}
+
+.tempMin {
+  font: var(--text-preset-7-font);
+  color: var(--color-neutral-200);
+}

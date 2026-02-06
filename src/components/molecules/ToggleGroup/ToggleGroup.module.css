@@ -1,0 +1,41 @@
+.toggleSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-100);
+}
+
+.toggleLabel {
+  font: var(--text-preset-8-medium-font);
+  color: var(--color-neutral-300);
+}
+
+.toggleOptions {
+  display: flex;
+  gap: var(--spacing-100);
+}
+
+.toggleOptions button {
+  flex: 1;
+  padding: var(--spacing-150) var(--spacing-200);
+  font: var(--text-preset-7-font);
+  font-family: var(--font-family-base);
+  color: var(--color-neutral-0);
+  background-color: var(--color-neutral-800);
+  border: 1px solid var(--color-neutral-700);
+  border-radius: var(--radius-12);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.toggleOptions button:hover {
+  background-color: var(--color-neutral-700);
+}
+
+.toggleOptions button.active {
+  background-color: var(--color-blue-500);
+  border-color: var(--color-blue-500);
+}
+
+.toggleOptions button.active:hover {
+  background-color: var(--color-blue-700);
+}

@@ -1,0 +1,22 @@
+.skeleton * {
+  visibility: hidden;
+}
+
+.sectionTitle {
+  font: var(--text-preset-5-font);
+  color: var(--color-neutral-0);
+  margin-block-end: var(--spacing-250);
+}
+
+.daysList {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-200);
+}
+
+@media (min-width: 768px) {
+  .daysList {
+    display: flex;
+    flex: 1;
+  }
+}

@@ -1,0 +1,14 @@
+.statItem {
+  padding: var(--spacing-250);
+  gap: var(--spacing-300);
+}
+
+.statLabel {
+  font: var(--text-preset-6-font);
+  color: var(--color-neutral-200);
+}
+
+.statValue {
+  font: var(--text-preset-3-font);
+  color: var(--color-neutral-0);
+}

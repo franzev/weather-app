@@ -1,0 +1,28 @@
+.item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-100);
+  padding-inline-start: var(--spacing-150);
+  padding-inline-end: var(--spacing-200);
+  padding-block: var(--spacing-125);
+  background-color: var(--color-neutral-700);
+  outline: 1px solid var(--color-neutral-600);
+  border-radius: var(--radius-8);
+  height: 60px;
+}
+
+.weatherIcon {
+  width: 40px;
+  height: 40px;
+}
+
+.time {
+  font: var(--text-preset-5-medium-font);
+  color: var(--color-neutral-0);
+  flex: 1;
+}
+
+.temp {
+  font: var(--text-preset-7-font);
+  color: var(--color-neutral-0);
+}

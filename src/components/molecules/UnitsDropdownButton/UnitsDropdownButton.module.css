@@ -1,0 +1,40 @@
+.unitsButton {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-75);
+  padding-inline: var(--spacing-125);
+  padding-block: var(--spacing-100);
+  font: var(--text-preset-7-font);
+  font-size: 0.875rem;
+  color: var(--color-neutral-0);
+  background-color: var(--color-neutral-800);
+  border: none;
+  border-radius: var(--radius-6);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+@media (min-width: 768px) {
+  .unitsButton {
+    padding-inline: var(--spacing-200);
+    padding-block: var(--spacing-125);
+    gap: var(--spacing-200);
+    font-size: 1rem;
+  }
+}
+
+.unitsButton:hover {
+  background-color: var(--color-neutral-800);
+}
+
+.unitsButton:focus {
+  outline: none;
+}
+
+.chevron {
+  transition: transform 0.2s;
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+}

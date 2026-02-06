@@ -1,0 +1,11 @@
+.weatherStats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-150);
+}
+
+@media (min-width: 768px) {
+  .weatherStats {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
