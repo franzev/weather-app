@@ -128,43 +128,42 @@ export const UnitsDropdown = () => {
           setIsOpen(!isOpen);
         }}
       />
-      {isOpen && (
-        <div
-          ref={menuRef}
-          id="units-menu"
-          role="menu"
-          className={styles.unitsDropdown}
-        >
-          <SystemSwitchButton role="menuitem" onClick={handleSystemSwitch}>
-            {switchLabel}
-          </SystemSwitchButton>
+      <div
+        ref={menuRef}
+        id="units-menu"
+        role="menu"
+        className={styles.unitsDropdown}
+        style={{ display: isOpen ? "block" : "none" }}
+      >
+        <SystemSwitchButton role="menuitem" onClick={handleSystemSwitch}>
+          {switchLabel}
+        </SystemSwitchButton>
 
-          <UnitSection
-            label="Temperature"
-            options={TEMPERATURE_OPTIONS}
-            selectedValue={units.temperature}
-            onSelect={setTemperatureUnit}
-          />
+        <UnitSection
+          label="Temperature"
+          options={TEMPERATURE_OPTIONS}
+          selectedValue={units.temperature}
+          onSelect={setTemperatureUnit}
+        />
 
-          <Divider />
+        <Divider />
 
-          <UnitSection
-            label="Wind Speed"
-            options={WIND_OPTIONS}
-            selectedValue={units.wind}
-            onSelect={setWindUnit}
-          />
+        <UnitSection
+          label="Wind Speed"
+          options={WIND_OPTIONS}
+          selectedValue={units.wind}
+          onSelect={setWindUnit}
+        />
 
-          <Divider />
+        <Divider />
 
-          <UnitSection
-            label="Precipitation"
-            options={PRECIPITATION_OPTIONS}
-            selectedValue={units.precipitation}
-            onSelect={setPrecipitationUnit}
-          />
-        </div>
-      )}
+        <UnitSection
+          label="Precipitation"
+          options={PRECIPITATION_OPTIONS}
+          selectedValue={units.precipitation}
+          onSelect={setPrecipitationUnit}
+        />
+      </div>
     </div>
   );
 };
