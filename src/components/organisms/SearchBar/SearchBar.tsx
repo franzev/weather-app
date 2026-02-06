@@ -27,8 +27,8 @@ const createLocationSelectHandler =
   (result: LocationSearchResult) =>
   (e: React.MouseEvent<HTMLLIElement>) => {
     e.preventDefault();
-    const { ...location } = result;
-    onLocationSelect(location);
+    const { latitude, longitude, name, country, admin1 } = result;
+    onLocationSelect({ latitude, longitude, name, country, admin1 });
   };
 
 export const SearchBarView = ({
@@ -163,11 +163,15 @@ export const SearchBar = () => {
   };
 
   const handleBlur = (e: React.FocusEvent<HTMLInputElement>) => {
-    // Don't hide results if clicking on a result item
-    const relatedTarget = e.relatedTarget as HTMLElement | null;
-    if (relatedTarget && resultsContainerRef.current?.contains(relatedTarget)) {
+    const relatedTarget = e.relatedTarget;
+
+    if (
+      relatedTarget instanceof Node &&
+      resultsContainerRef.current?.contains(relatedTarget)
+    ) {
       return;
     }
+
     setIsFocused(false);
   };
 
