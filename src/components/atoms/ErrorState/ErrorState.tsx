@@ -7,7 +7,7 @@ interface ErrorStateProps {
 
 export const ErrorState = ({ onRetry }: ErrorStateProps) => {
   return (
-    <div className={styles.errorState}>
+    <section className={styles.errorState}>
       <img src="/images/icon-error.svg" alt="" aria-hidden="true" />
 
       <h1>Something went wrong</h1>
@@ -26,6 +26,6 @@ export const ErrorState = ({ onRetry }: ErrorStateProps) => {
         <img src="/images/icon-retry.svg" alt="" aria-hidden="true" />
         Retry
       </Button>
-    </div>
+    </section>
   );
 };
