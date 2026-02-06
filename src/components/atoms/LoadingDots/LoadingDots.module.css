@@ -19,12 +19,6 @@
   animation: bounce 1.4s ease-in-out infinite;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .dot {
-    animation: none;
-  }
-}
-
 .dot:nth-child(1) {
   animation-delay: 0s;
 }
@@ -35,6 +29,12 @@
 
 .dot:nth-child(3) {
   animation-delay: 0.4s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dot {
+    animation: none;
+  }
 }
 
 .text {
